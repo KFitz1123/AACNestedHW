@@ -1,6 +1,7 @@
 
 
 public class AACCategory {
+
   private AssociativeArray<String,String> imgs;
   private String name;
 
@@ -15,17 +16,21 @@ public class AACCategory {
 
   public String getCategory​(){
    return name; 
-  }
-
+  }// getCategory
+  
   public String[] getImages​(){
-    return new String[]{"one","two","three"}; //STUB
+    String[] imgarr = new String[this.imgs.size()];
+    for(int i = 0; i < this.imgs.size(); i++){
+      imgarr[i] = this.imgs.pairs[i].key;
+    }
+    return imgarr; 
    }
 
    public String getText​(String imageLoc){
     try{
       return this.imgs.get(imageLoc);
     } catch(Exception e){
-    return "invalid image";
+    return "mistake";
    } 
   }
    
